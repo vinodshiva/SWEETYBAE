@@ -19,7 +19,11 @@ from django.urls import path
 from home import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path ('admin/', admin.site.urls),
     path ('',views.index),
-    path ("xyz/",views.text)
+    path ("xyz/",views.text),
+    path ("login/",views.login),
+    path ('login/loginsub/',views.logsub),
+    path ("raja/",views.register),
+    path ('raja/registersub/',views.regsub),
 ]

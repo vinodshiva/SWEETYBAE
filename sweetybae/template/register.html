@@ -1,0 +1,58 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>   
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+</head>    <style>
+    .main{
+        background-color: rgba(232, 248, 10, 0.438);
+        width: 300px;
+        margin-top: 180px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .main input{
+        padding: 5px;
+        border: none;
+        border-bottom: 2px solid blue;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        width: 200px;
+        height: 25px;
+        padding-left: 20px;
+        }
+        .main button{
+            width: 300px;
+            height: 35px;
+            padding: 5px;
+            background-color: brown;
+            color: white;
+            margin-bottom: 60px;
+
+
+        }
+   
+    </style>
+<body background="{% static '\images\bluberry.jpg' %}">
+    <center>
+    <div class="main">
+        <h1>
+            REGISTER
+        </h1>
+        <form action="registersub/">
+        <input type="text" placeholder="first name" required name="uname"><br>
+        <input type="text" placeholder="lastname" required name="pname"><br>
+        <input type="text" placeholder="email" required><br>
+        <input type="text" placeholder="Password" required><br>
+        <input type="text" placeholder="repassword" required><br>
+        <button type="submit">Submit
+        </button></form>
+    </div>
+    </center>
+</body>
+</html>
