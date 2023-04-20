@@ -44,12 +44,14 @@
         <h1>
             REGISTER
         </h1>
-        <form action="registersub/">
+        <form action="registersub/" method="post">
+            {% csrf_token %}
         <input type="text" placeholder="first name" required name="uname"><br>
         <input type="text" placeholder="lastname" required name="pname"><br>
-        <input type="text" placeholder="email" required><br>
-        <input type="text" placeholder="Password" required><br>
-        <input type="text" placeholder="repassword" required><br>
+        <input type="text" placeholder="username" required name="bname"><br>
+        <input type="text" placeholder="email" required name="aname"><br>
+        <input type="text" placeholder="Password" required name="pwname"><br>
+        <input type="text" placeholder="repassword" required name="rpwname"><br>
         <button type="submit">Submit
         </button></form>
     </div>
