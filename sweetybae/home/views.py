@@ -1,10 +1,13 @@
 from django.shortcuts import render,redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
+from product.models import fruits
 
 
 def index(request):
-    return render(request,"index.html")
+    obj=fruits.objects.all()
+    print("hiiiii",obj)
+    return render(request,"index.html",{'data':obj})
 
 def text(request):
     return render(request,"text.html")
