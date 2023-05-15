@@ -14,7 +14,12 @@ def cmt(request):
     return redirect("/product/?id="+ipro)
 
 def like(request):
-    return render(request,"text.html")
+    cmtid=request.GET['id']
+    obj=comment.objects.filter(id=cmtid)
+    like=int(obj[0].like)+1
+    obj.update(like=str(like))
+    return redirect("/product/?id="+str(obj[0].proid_id))
+    
 
 
 # Create your views here.

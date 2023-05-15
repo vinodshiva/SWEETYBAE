@@ -172,7 +172,7 @@
           <b>{{i.msg}}</b>&nbsp;&nbsp;<small>{{i.date}}</small><br>
           <small>{{i.user}}</small>&nbsp;
           <font>{{i.like}}</font>
-          <a href="like"><img src="{% static 'images/vinuu.png' %}" width="20px" height="20px"></a>
+          <a href="like/?id={{i.id}}"><img src="{% static 'images/vinuu.png' %}" width="20px" height="20px"></a>
         
           
         </p>
@@ -184,7 +184,7 @@
        </div>
       <form action="cmt" method="GET">
       <div class="commententry">
-        <textarea name="cmtmsg"id=""cols="30" rows="3" placeholder="enter your comments....."></textarea><br>
+        <textarea name="cmtmsg"id=""cols="30" rows="3" placeholder="enter your comments....." required></textarea><br>
         <input type="hidden"value="{{user.username}}"name="user">
         <input type="hidden"value="{{fruit.id}}"name="proid">
         <button>submit</button>

@@ -6,9 +6,12 @@ from product.models import fruits
 
 def index(request):
     obj=fruits.objects.all()
+    if 'username' in request.COOKIES:
+        name=request.COOKIES['username']
+    else:
+        name=''
     print("hiiiii",obj)
-    return render(request,"index.html",{'data':obj})
-
+    return render(request,"index.html",{'data':obj,'name':name})
 def text(request):
     return render(request,"text.html")
 
@@ -20,7 +23,9 @@ def login(request):
             user=auth.authenticate(username=uname,password=pname)
             if user:
                 auth.login(request,user)
-                return redirect('/')
+                res=redirect('/')
+                res.set_cookie("username",uname)
+                return res
             msg= "invalid username and password"
             return render(request,"login.html",{'msg':msg})
     else:
@@ -56,7 +61,10 @@ def register(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect("/")
+    lg=redirect("/")
+    lg.delete_cookie('username')
+    return lg
+
 
 
 
