@@ -65,6 +65,9 @@ def logout(request):
     lg.delete_cookie('username')
     return lg
 
+def rss(request):
+    return render(request,'text.html')
+
 
 
 
